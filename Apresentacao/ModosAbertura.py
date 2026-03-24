@@ -1,7 +1,7 @@
 #lista dos modos:
 '''
 
- o "w" cria um novo arquivo ou sobreescreve o existente
+ o "w" cria um novo arquivo se não existir ou sobreescreve o existente
 
 with open("exemplo.txt", "w", encoding="utf-8") as arquivo:
     arquivo.writelines(["\nOlá,mundo!\n"])
@@ -19,7 +19,7 @@ with open("exemplo.txt", "a", encoding="utf-8") as arquivo:
 
 
 '''
-o "r" significa read, ele faz a leitura do arquivo
+o "r" significa read, ele faz a leitura do arquivo. Caso não exista, vai exibir o erro "FileNotFoundError"
 
 with open("exemplo.txt", "r", encoding="utf-8") as arquivo:
     conteudo = arquivo.read()
@@ -28,7 +28,7 @@ with open("exemplo.txt", "r", encoding="utf-8") as arquivo:
 '''
 
 '''
-o "r+" signifca read + write, ou seja, faz a leitura e adiciona e escrita
+o "r+" signifca read + write, ou seja, faz a leitura e adiciona e escrita no começo do arquivo
 
 with open("exemplo.txt", "r+", encoding="utf-8") as arquivo:
     texto = arquivo.read()
