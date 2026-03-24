@@ -1,7 +1,7 @@
 #Introduzir modulo json para serialização de dados
 
 import json
-'''
+
 # crie uma lista de dados com usuários contidos em dicionários
 dadosUsuarios = [{'nome': 'Ana Maria', 'idade': 30, 'cidade': 'Recife', 'sexo': 'F'}, 
                  {'nome': 'Antonio Fagundes', 'idade': 32, 'cidade': 'Recife', 'sexo': 'M'}, 
@@ -19,4 +19,3 @@ with open('dadosUsuarios.json', 'w') as usuarios:
 with open('dadosUsuarios.json', 'r') as usuarios:
     lista = json.load(usuarios)
     print(lista)
-'''

@@ -7,7 +7,7 @@ with open("exemplo.txt", "w", encoding="utf-8") as arquivo:
     arquivo.writelines(["\nOlá,mundo!\n"])
     arquivo.write("Esta é uma nova linha.")
 '''
-
+import csv
 
 ''' 
 o "a" significa anexo, ela é adicionada no final do texto
@@ -22,9 +22,9 @@ with open("exemplo.txt", "a", encoding="utf-8") as arquivo:
 o "r" significa read, ele faz a leitura do arquivo
 
 with open("exemplo.txt", "r", encoding="utf-8") as arquivo:
-    arquivo.writelines(["\nOlá,mundo!\n"])
-    arquivo.write("Esta é uma nova linha.")
-
+    conteudo = arquivo.read()
+    print(conteudo)
+    
 '''
 
 '''
@@ -53,3 +53,5 @@ with open("dados.bin", "wb") as arquivo:
     arquivo.write(dados_binarios)
 
 '''
+
+
