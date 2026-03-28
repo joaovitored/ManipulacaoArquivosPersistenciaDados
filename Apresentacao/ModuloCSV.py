@@ -11,28 +11,28 @@ linhas = [
 with open('produtos.csv', 'w', newline='', encoding='utf-8') as arquivo: # Importante: newline='' evita linhas em branco extras no Windows
     escritor = csv.writer(arquivo)
 
-    escritor.writerow(cabecalho) # 3. Escrevendo o cabeçalho (uma única linha)
-    escritor.writerows(linhas) # 4. Escrevendo o restante dos dados (múltiplas linhas de uma vez)
+    escritor.writerow(cabecalho) # Escrevendo o cabeçalho (uma única linha)
+    escritor.writerows(linhas) # Escrevendo o restante dos dados (múltiplas linhas de uma vez)
     
 
 print("Arquivo 'produtos.csv' gerado com sucesso!\n")
 
 print('\n-------- CSV.READER --------\n ')
 
-with open('produtos.csv', mode='r', encoding='utf-8') as arquivo:
+with open('produtos.csv', 'r', encoding='utf-8') as arquivo:
     leitor = csv.reader(arquivo)
 
     next(leitor) # Pula o cabeçalho para não processar os nomes das colunas
     
     for linha in leitor:
-        nome = linha[0]
-        preco = linha[1]
-        estoque = linha[2]
+        nome = linha[0] # primeira coluna (Produto).
+        preco = linha[1] # segunda coluna (Preço).
+        estoque = linha[2] # terceira coluna (Estoque)
         print(f"Produto: {nome} | Preço: R$ {preco} | estoque: {estoque}\n")
 
 print('\n-------- CSV.DICTREADER --------\n')
 
-with open('produtos.csv', mode='r', encoding='utf-8') as arquivo:
+with open('produtos.csv', 'r', encoding='utf-8') as arquivo:
     leitor_dicionario = csv.DictReader(arquivo)
     
     for linha in leitor_dicionario:
